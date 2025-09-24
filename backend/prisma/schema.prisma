@@ -1,0 +1,11 @@
+// Prisma schema for the iroha backend.
+// Define your data models in this file.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
