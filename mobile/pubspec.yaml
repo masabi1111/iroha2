@@ -13,6 +13,9 @@ dependencies:
   flutter_riverpod: ^2.4.5
   dio: ^5.3.3
   flutter_secure_storage: ^9.0.0
+  firebase_core: ^2.24.2
+  firebase_messaging: ^14.7.10
+  flutter_local_notifications: ^17.1.2
 
 
 dev_dependencies:

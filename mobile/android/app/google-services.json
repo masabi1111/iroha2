@@ -1,0 +1,22 @@
+{
+  "project_info": {
+    "project_id": "replace-with-your-project-id",
+    "project_number": "000000000000"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:000000000000:android:placeholder",
+        "android_client_info": {
+          "package_name": "com.example.replace"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "replace-with-your-api-key"
+        }
+      ]
+    }
+  ],
+  "configuration_version": "1"
+}
