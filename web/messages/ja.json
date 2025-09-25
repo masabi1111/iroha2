@@ -1,0 +1,62 @@
+{
+  "layout": {
+    "appName": "いろはカタログ",
+    "tagline": "季節制の日本語プログラム"
+  },
+  "actions": {
+    "browseCourses": "講座を探す",
+    "view": "詳細",
+    "enroll": "申し込む",
+    "retry": "再試行"
+  },
+  "errors": {
+    "generic": "現在コンテンツを読み込めません。しばらくしてから再試行してください。",
+    "sections": "この講座のクラス情報を取得できませんでした。"
+  },
+  "empty": {
+    "seasons": "現在申し込み可能なシーズンはありません。後ほどご確認ください。",
+    "courses": "このシーズンの公開済み講座はまだありません。",
+    "sections": "クラス情報は後日公開予定です。"
+  },
+  "seasonsPage": {
+    "title": "受付中のシーズン",
+    "description": "開講中・受付中のシーズンから自分に合った日本語講座を見つけましょう。",
+    "enrollmentWindow": "申込期間 {start} 〜 {end}",
+    "runWindow": "開講期間 {start} 〜 {end}"
+  },
+  "seasonCoursesPage": {
+    "title": "{season} シーズンの講座",
+    "description": "{season} シーズンで受講できる公開済み講座です。",
+    "table": {
+      "code": "コード",
+      "course": "講座名",
+      "level": "レベル",
+      "price": "受講料",
+      "seats": "残席",
+      "action": "操作"
+    },
+    "pagination": "ページ {page} / {pages}",
+    "previous": "前のページ",
+    "next": "次のページ"
+  },
+  "coursePage": {
+    "metaDescription": "{title} の詳細・受講料・クラス情報をご覧ください。",
+    "level": "レベル",
+    "price": "受講料",
+    "seatsLeft": "{count, plural, =0 {残席なし} one {残り # 席} other {残り # 席}}",
+    "description": "講座概要",
+    "sectionsTitle": "クラス",
+    "schedule": "{weekday} · {start} 〜 {end}",
+    "instructor": "担当講師: {name}",
+    "unassignedInstructor": "担当講師: 調整中"
+  },
+  "weekdays": {
+    "0": "日曜",
+    "1": "月曜",
+    "2": "火曜",
+    "3": "水曜",
+    "4": "木曜",
+    "5": "金曜",
+    "6": "土曜"
+  }
+}

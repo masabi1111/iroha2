@@ -1,0 +1,62 @@
+{
+  "layout": {
+    "appName": "Iroha Catalog",
+    "tagline": "Seasonal Japanese language programs"
+  },
+  "actions": {
+    "browseCourses": "Browse courses",
+    "view": "View",
+    "enroll": "Enroll",
+    "retry": "Retry"
+  },
+  "errors": {
+    "generic": "We couldn't load this content right now. Please try again later.",
+    "sections": "We couldn't load sections for this course."
+  },
+  "empty": {
+    "seasons": "No seasons are currently open for enrollment. Please check back soon.",
+    "courses": "No published courses are available for this season yet.",
+    "sections": "Sections will be announced soon."
+  },
+  "seasonsPage": {
+    "title": "Open seasons",
+    "description": "Browse our running and enrolling seasons to find the right Japanese course.",
+    "enrollmentWindow": "Enrollment {start} – {end}",
+    "runWindow": "Runs {start} – {end}"
+  },
+  "seasonCoursesPage": {
+    "title": "Courses in {season}",
+    "description": "Published courses for the {season} season.",
+    "table": {
+      "code": "Code",
+      "course": "Course",
+      "level": "Level",
+      "price": "Price",
+      "seats": "Seats left",
+      "action": "Action"
+    },
+    "pagination": "Page {page} of {pages}",
+    "previous": "Previous page",
+    "next": "Next page"
+  },
+  "coursePage": {
+    "metaDescription": "Discover details, tuition, and sections for {title}.",
+    "level": "Level",
+    "price": "Tuition",
+    "seatsLeft": "{count, plural, =0 {No seats left} one {# seat left} other {# seats left}}",
+    "description": "About this course",
+    "sectionsTitle": "Sections",
+    "schedule": "{weekday} · {start} – {end}",
+    "instructor": "Instructor: {name}",
+    "unassignedInstructor": "Instructor TBA"
+  },
+  "weekdays": {
+    "0": "Sunday",
+    "1": "Monday",
+    "2": "Tuesday",
+    "3": "Wednesday",
+    "4": "Thursday",
+    "5": "Friday",
+    "6": "Saturday"
+  }
+}
