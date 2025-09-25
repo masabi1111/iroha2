@@ -79,6 +79,31 @@
     "dashboardCta": "Return to dashboard",
     "error": "We couldn't load your checkout session. Please try again."
   },
+  "dashboard": {
+    "title": "Student dashboard",
+    "description": "Track upcoming lessons, quizzes, and your progress.",
+    "nextLesson": "Next Lesson",
+    "nextLessonEmpty": "You're all caught up on lessons.",
+    "openLesson": "Open",
+    "dueQuizzes": "Due Quizzes",
+    "dueQuizzesEmpty": "No quizzes are due right now.",
+    "startQuiz": "Start",
+    "attendance": "Attendance",
+    "attendanceEmpty": "Attendance data is not yet available.",
+    "attendanceStatus": {
+      "great": "On track",
+      "warning": "Keep going",
+      "danger": "Needs attention"
+    },
+    "certificates": "Certificates",
+    "certificatesEmpty": "Certificates will appear here once issued.",
+    "viewCertificate": "View certificate",
+    "enrollments": "My Enrollments",
+    "enrollmentsEmpty": "You are not enrolled in any courses yet.",
+    "statusLabel": "Status",
+    "seatsLabel": "Seats left",
+    "untitledCourse": "Untitled course"
+  },
   "weekdays": {
     "0": "Sunday",
     "1": "Monday",

@@ -79,6 +79,31 @@
     "dashboardCta": "العودة إلى لوحة التحكم",
     "error": "تعذر تحميل جلسة الدفع. حاول مرة أخرى."
   },
+  "dashboard": {
+    "title": "لوحة الطالب",
+    "description": "تابع الدروس القادمة والاختبارات وتقدمك.",
+    "nextLesson": "الدرس التالي",
+    "nextLessonEmpty": "لقد أنهيت جميع الدروس المتاحة.",
+    "openLesson": "فتح",
+    "dueQuizzes": "اختبارات مستحقة",
+    "dueQuizzesEmpty": "لا توجد اختبارات مستحقة حالياً.",
+    "startQuiz": "بدء",
+    "attendance": "الحضور",
+    "attendanceEmpty": "بيانات الحضور غير متاحة بعد.",
+    "attendanceStatus": {
+      "great": "في المسار الصحيح",
+      "warning": "واصل التقدم",
+      "danger": "يحتاج إلى متابعة"
+    },
+    "certificates": "الشهادات",
+    "certificatesEmpty": "ستظهر الشهادات هنا عند إصدارها.",
+    "viewCertificate": "عرض الشهادة",
+    "enrollments": "تسجيلاتي",
+    "enrollmentsEmpty": "لست مسجلاً في أي دورات بعد.",
+    "statusLabel": "الحالة",
+    "seatsLabel": "المقاعد المتبقية",
+    "untitledCourse": "دورة بدون عنوان"
+  },
   "weekdays": {
     "0": "الأحد",
     "1": "الاثنين",

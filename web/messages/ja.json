@@ -79,6 +79,31 @@
     "dashboardCta": "ダッシュボードに戻る",
     "error": "チェックアウトの読み込みに失敗しました。もう一度お試しください。"
   },
+  "dashboard": {
+    "title": "受講生ダッシュボード",
+    "description": "これからのレッスンや小テスト、進捗状況を確認しましょう。",
+    "nextLesson": "次のレッスン",
+    "nextLessonEmpty": "公開済みのレッスンはすべて確認済みです。",
+    "openLesson": "開く",
+    "dueQuizzes": "提出期限の小テスト",
+    "dueQuizzesEmpty": "現在提出期限の小テストはありません。",
+    "startQuiz": "開始",
+    "attendance": "出席状況",
+    "attendanceEmpty": "出席データはまだ利用できません。",
+    "attendanceStatus": {
+      "great": "順調です",
+      "warning": "継続しましょう",
+      "danger": "要注意"
+    },
+    "certificates": "修了証",
+    "certificatesEmpty": "修了証が発行されるとここに表示されます。",
+    "viewCertificate": "修了証を見る",
+    "enrollments": "受講中の講座",
+    "enrollmentsEmpty": "現在受講中の講座はありません。",
+    "statusLabel": "ステータス",
+    "seatsLabel": "残席",
+    "untitledCourse": "名称未設定の講座"
+  },
   "weekdays": {
     "0": "日曜",
     "1": "月曜",
