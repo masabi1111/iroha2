@@ -1,7 +1,11 @@
 {
   "layout": {
     "appName": "Iroha Catalog",
-    "tagline": "Seasonal Japanese language programs"
+    "tagline": "Seasonal Japanese language programs",
+    "nav": {
+      "dashboard": "Dashboard",
+      "logout": "Logout"
+    }
   },
   "actions": {
     "browseCourses": "Browse courses",
@@ -49,6 +53,31 @@
     "schedule": "{weekday} · {start} – {end}",
     "instructor": "Instructor: {name}",
     "unassignedInstructor": "Instructor TBA"
+  },
+  "enrollPage": {
+    "title": "Enroll in {title}",
+    "price": "Course tuition: {price}",
+    "submit": "Continue to payment",
+    "loading": "Submitting…",
+    "sectionLabel": "Preferred section",
+    "sectionPlaceholder": "Select a section",
+    "noSections": "No section selection is required.",
+    "optional": "optional",
+    "waitlistedTitle": "You're on the waitlist",
+    "waitlistedDescription": "We'll notify you as soon as a seat opens up.",
+    "waitlistedSeats": "Seats remaining: {count}",
+    "dashboardCta": "Go to dashboard",
+    "successToast": "Enrollment submitted",
+    "errorToast": "We couldn't process your enrollment. Please try again."
+  },
+  "checkoutPage": {
+    "title": "Complete your payment",
+    "description": "Open the checkout page to finalize your enrollment.",
+    "openCheckout": "Open checkout",
+    "missingUrl": "We couldn't generate a checkout link. Please contact support.",
+    "providerRef": "Reference: {ref}",
+    "dashboardCta": "Return to dashboard",
+    "error": "We couldn't load your checkout session. Please try again."
   },
   "weekdays": {
     "0": "Sunday",

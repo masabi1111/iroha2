@@ -1,7 +1,11 @@
 {
   "layout": {
     "appName": "いろはカタログ",
-    "tagline": "季節制の日本語プログラム"
+    "tagline": "季節制の日本語プログラム",
+    "nav": {
+      "dashboard": "ダッシュボード",
+      "logout": "ログアウト"
+    }
   },
   "actions": {
     "browseCourses": "講座を探す",
@@ -49,6 +53,31 @@
     "schedule": "{weekday} · {start} 〜 {end}",
     "instructor": "担当講師: {name}",
     "unassignedInstructor": "担当講師: 調整中"
+  },
+  "enrollPage": {
+    "title": "{title} に申し込む",
+    "price": "受講料: {price}",
+    "submit": "支払いに進む",
+    "loading": "送信中...",
+    "sectionLabel": "希望クラス",
+    "sectionPlaceholder": "クラスを選択",
+    "noSections": "クラスの選択は不要です。",
+    "optional": "任意",
+    "waitlistedTitle": "ウェイティングリストに登録されました",
+    "waitlistedDescription": "席が空き次第ご連絡いたします。",
+    "waitlistedSeats": "残席: {count}",
+    "dashboardCta": "ダッシュボードへ戻る",
+    "successToast": "申込を送信しました",
+    "errorToast": "申込を処理できませんでした。もう一度お試しください。"
+  },
+  "checkoutPage": {
+    "title": "支払いを完了する",
+    "description": "チェックアウトページを開いて申し込みを確定してください。",
+    "openCheckout": "チェックアウトを開く",
+    "missingUrl": "チェックアウトリンクを生成できませんでした。サポートへお問い合わせください。",
+    "providerRef": "参照番号: {ref}",
+    "dashboardCta": "ダッシュボードに戻る",
+    "error": "チェックアウトの読み込みに失敗しました。もう一度お試しください。"
   },
   "weekdays": {
     "0": "日曜",
