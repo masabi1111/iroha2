@@ -87,5 +87,169 @@
     "4": "Thursday",
     "5": "Friday",
     "6": "Saturday"
+  },
+  "admin": {
+    "title": "Admin portal",
+    "description": "Manage seasons, courses, sections, and reports.",
+    "links": {
+      "overview": "Overview",
+      "seasons": "Seasons",
+      "courses": "Courses",
+      "sections": "Sections",
+      "reports": "Reports"
+    },
+    "overview": {
+      "seasons": "Configure enrollment windows and term dates.",
+      "courses": "Create offerings for each level and modality.",
+      "sections": "Schedule instructors and meeting times.",
+      "reports": "Review enrollment performance by course."
+    },
+    "actions": {
+      "view": "View",
+      "manage": "Actions",
+      "edit": "Edit",
+      "new": "New",
+      "create": "Create",
+      "save": "Save",
+      "saving": "Saving…",
+      "publish": "Publish",
+      "publishing": "Publishing…",
+      "filter": "Filter",
+      "exportCsv": "Export CSV",
+      "createSection": "Create section"
+    },
+    "messages": {
+      "error": "We couldn't complete this request. Please try again.",
+      "noSeasons": "No seasons found.",
+      "noCourses": "No courses found."
+    },
+    "pagination": {
+      "summary": "Page {page} of {pages}"
+    },
+    "seasons": {
+      "title": "Seasons",
+      "description": "View and update enrollment periods for each season.",
+      "list": {
+        "code": "Code",
+        "title": "Title",
+        "status": "Status",
+        "enrollment": "Enrollment",
+        "dates": "Dates",
+        "enrollmentWindow": "{start} – {end}",
+        "seasonWindow": "{start} – {end}"
+      },
+      "status": {
+        "draft": "Draft",
+        "enrolling": "Enrolling",
+        "running": "Running",
+        "completed": "Completed",
+        "archived": "Archived"
+      },
+      "fields": {
+        "code": "Season code",
+        "title": "Title",
+        "enrollmentOpen": "Enrollment opens",
+        "enrollmentClose": "Enrollment closes",
+        "startDate": "Start date",
+        "endDate": "End date",
+        "status": "Status"
+      },
+      "new": {
+        "title": "Create season",
+        "description": "Define the enrollment and run dates for a new season."
+      },
+      "edit": {
+        "title": "Edit season {code}",
+        "description": "Update schedule and enrollment settings."
+      }
+    },
+    "courses": {
+      "title": "Courses",
+      "description": "Manage course inventory by season.",
+      "list": {
+        "code": "Code",
+        "title": "Title",
+        "level": "Level",
+        "season": "Season",
+        "price": "Price",
+        "published": "Published"
+      },
+      "filter": {
+        "season": "Season",
+        "allSeasons": "All seasons"
+      },
+      "fields": {
+        "season": "Season",
+        "selectSeason": "Select a season",
+        "code": "Course code",
+        "title": "Title",
+        "level": "Level",
+        "modality": "Modality",
+        "capacity": "Capacity",
+        "priceCents": "Price (cents)",
+        "currency": "Currency",
+        "published": "Published"
+      },
+      "new": {
+        "title": "Create course",
+        "description": "Add a new course to a season."
+      },
+      "edit": {
+        "title": "Edit course {code}",
+        "description": "Adjust details, capacity, and publication state."
+      },
+      "published": {
+        "true": "Published",
+        "false": "Draft"
+      }
+    },
+    "sections": {
+      "new": {
+        "title": "Create section",
+        "description": "Schedule a new teaching section for a course."
+      },
+      "fields": {
+        "courseId": "Course ID",
+        "instructorId": "Instructor ID",
+        "weekday": "Weekday",
+        "weekdayPlaceholder": "Select weekday",
+        "startTime": "Start time",
+        "endTime": "End time",
+        "startDate": "Start date",
+        "endDate": "End date",
+        "meetingLink": "Meeting link"
+      },
+      "weekdays": {
+        "0": "Sunday",
+        "1": "Monday",
+        "2": "Tuesday",
+        "3": "Wednesday",
+        "4": "Thursday",
+        "5": "Friday",
+        "6": "Saturday"
+      }
+    },
+    "reports": {
+      "enrollment": {
+        "title": "Enrollment report",
+        "description": "Track enrollment status counts per course.",
+        "filter": "Season",
+        "allSeasons": "Select season",
+        "columns": {
+          "code": "Course",
+          "title": "Title",
+          "capacity": "Capacity",
+          "active": "Active",
+          "pending": "Pending",
+          "waitlisted": "Waitlisted",
+          "completed": "Completed",
+          "cancelled": "Cancelled",
+          "seatsLeft": "Seats left"
+        },
+        "empty": "No enrollment data for this season.",
+        "prompt": "Choose a season to view enrollment totals.",
+        "manageSeasons": "Manage seasons"
+      }
+    }
   }
 }
