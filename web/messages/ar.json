@@ -1,7 +1,11 @@
 {
   "layout": {
     "appName": "كتالوج إيروها",
-    "tagline": "برامج اللغة اليابانية الموسمية"
+    "tagline": "برامج اللغة اليابانية الموسمية",
+    "nav": {
+      "dashboard": "لوحة التحكم",
+      "logout": "تسجيل الخروج"
+    }
   },
   "actions": {
     "browseCourses": "تصفح الدورات",
@@ -49,6 +53,31 @@
     "schedule": "{weekday} · {start} – {end}",
     "instructor": "المدرس: {name}",
     "unassignedInstructor": "سيتم تحديد المدرس لاحقًا"
+  },
+  "enrollPage": {
+    "title": "التسجيل في {title}",
+    "price": "رسوم الدورة: {price}",
+    "submit": "المتابعة إلى الدفع",
+    "loading": "جاري الإرسال...",
+    "sectionLabel": "الشعبة المفضلة",
+    "sectionPlaceholder": "اختر شعبة",
+    "noSections": "لا حاجة لاختيار شعبة.",
+    "optional": "اختياري",
+    "waitlistedTitle": "تم إضافتك إلى قائمة الانتظار",
+    "waitlistedDescription": "سنبلغك فور توفر مقعد.",
+    "waitlistedSeats": "المقاعد المتبقية: {count}",
+    "dashboardCta": "الانتقال إلى لوحة التحكم",
+    "successToast": "تم إرسال طلب التسجيل",
+    "errorToast": "تعذر معالجة التسجيل. حاول مرة أخرى."
+  },
+  "checkoutPage": {
+    "title": "أكمل عملية الدفع",
+    "description": "افتح صفحة الدفع لإتمام تسجيلك.",
+    "openCheckout": "فتح صفحة الدفع",
+    "missingUrl": "تعذر إنشاء رابط الدفع. يرجى التواصل مع الدعم.",
+    "providerRef": "المرجع: {ref}",
+    "dashboardCta": "العودة إلى لوحة التحكم",
+    "error": "تعذر تحميل جلسة الدفع. حاول مرة أخرى."
   },
   "weekdays": {
     "0": "الأحد",
