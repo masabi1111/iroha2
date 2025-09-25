@@ -112,5 +112,169 @@
     "4": "الخميس",
     "5": "الجمعة",
     "6": "السبت"
+  },
+  "admin": {
+    "title": "بوابة الإدارة",
+    "description": "إدارة المواسم والدورات والشُعب والتقارير.",
+    "links": {
+      "overview": "نظرة عامة",
+      "seasons": "المواسم",
+      "courses": "الدورات",
+      "sections": "الشُعب",
+      "reports": "التقارير"
+    },
+    "overview": {
+      "seasons": "إعداد فترات التسجيل ومواعيد الموسم.",
+      "courses": "إنشاء العروض لكل مستوى ونمط.",
+      "sections": "جدولة المعلمين وأوقات اللقاء.",
+      "reports": "مراجعة أداء التسجيل لكل دورة."
+    },
+    "actions": {
+      "view": "عرض",
+      "manage": "إجراءات",
+      "edit": "تعديل",
+      "new": "جديد",
+      "create": "إنشاء",
+      "save": "حفظ",
+      "saving": "جارٍ الحفظ…",
+      "publish": "نشر",
+      "publishing": "جارٍ النشر…",
+      "filter": "تصفية",
+      "exportCsv": "تصدير CSV",
+      "createSection": "إنشاء شعبة"
+    },
+    "messages": {
+      "error": "تعذر إتمام هذا الطلب. يرجى المحاولة مرة أخرى.",
+      "noSeasons": "لا توجد مواسم.",
+      "noCourses": "لا توجد دورات."
+    },
+    "pagination": {
+      "summary": "الصفحة {page} من {pages}"
+    },
+    "seasons": {
+      "title": "المواسم",
+      "description": "عرض وتحديث فترات التسجيل لكل موسم.",
+      "list": {
+        "code": "الرمز",
+        "title": "العنوان",
+        "status": "الحالة",
+        "enrollment": "التسجيل",
+        "dates": "التواريخ",
+        "enrollmentWindow": "{start} – {end}",
+        "seasonWindow": "{start} – {end}"
+      },
+      "status": {
+        "draft": "مسودة",
+        "enrolling": "قيد التسجيل",
+        "running": "قيد التنفيذ",
+        "completed": "منتهٍ",
+        "archived": "مؤرشف"
+      },
+      "fields": {
+        "code": "رمز الموسم",
+        "title": "العنوان",
+        "enrollmentOpen": "بداية التسجيل",
+        "enrollmentClose": "نهاية التسجيل",
+        "startDate": "تاريخ البدء",
+        "endDate": "تاريخ الانتهاء",
+        "status": "الحالة"
+      },
+      "new": {
+        "title": "إنشاء موسم",
+        "description": "حدد فترات التسجيل وتشغيل الموسم الجديد."
+      },
+      "edit": {
+        "title": "تعديل موسم {code}",
+        "description": "تحديث الإعدادات الزمنية والتسجيل."
+      }
+    },
+    "courses": {
+      "title": "الدورات",
+      "description": "إدارة الدورات لكل موسم.",
+      "list": {
+        "code": "الرمز",
+        "title": "العنوان",
+        "level": "المستوى",
+        "season": "الموسم",
+        "price": "السعر",
+        "published": "منشور"
+      },
+      "filter": {
+        "season": "الموسم",
+        "allSeasons": "كل المواسم"
+      },
+      "fields": {
+        "season": "الموسم",
+        "selectSeason": "اختر موسمًا",
+        "code": "رمز الدورة",
+        "title": "العنوان",
+        "level": "المستوى",
+        "modality": "نمط التعلم",
+        "capacity": "الطاقة الاستيعابية",
+        "priceCents": "السعر (بالفلس)",
+        "currency": "العملة",
+        "published": "منشور"
+      },
+      "new": {
+        "title": "إنشاء دورة",
+        "description": "أضف دورة جديدة إلى موسم."
+      },
+      "edit": {
+        "title": "تعديل دورة {code}",
+        "description": "عدّل التفاصيل والطاقة وحالة النشر."
+      },
+      "published": {
+        "true": "منشور",
+        "false": "مسودة"
+      }
+    },
+    "sections": {
+      "new": {
+        "title": "إنشاء شعبة",
+        "description": "جدولة شعبة جديدة لهذه الدورة."
+      },
+      "fields": {
+        "courseId": "معرّف الدورة",
+        "instructorId": "معرّف المدرس",
+        "weekday": "اليوم",
+        "weekdayPlaceholder": "اختر اليوم",
+        "startTime": "وقت البدء",
+        "endTime": "وقت الانتهاء",
+        "startDate": "تاريخ البدء",
+        "endDate": "تاريخ الانتهاء",
+        "meetingLink": "رابط اللقاء"
+      },
+      "weekdays": {
+        "0": "الأحد",
+        "1": "الاثنين",
+        "2": "الثلاثاء",
+        "3": "الأربعاء",
+        "4": "الخميس",
+        "5": "الجمعة",
+        "6": "السبت"
+      }
+    },
+    "reports": {
+      "enrollment": {
+        "title": "تقرير التسجيل",
+        "description": "تتبع حالات التسجيل لكل دورة.",
+        "filter": "الموسم",
+        "allSeasons": "اختر موسمًا",
+        "columns": {
+          "code": "الدورة",
+          "title": "العنوان",
+          "capacity": "الطاقة",
+          "active": "نشط",
+          "pending": "معلق",
+          "waitlisted": "قائمة الانتظار",
+          "completed": "مكتمل",
+          "cancelled": "ملغى",
+          "seatsLeft": "المقاعد المتبقية"
+        },
+        "empty": "لا توجد بيانات تسجيل لهذا الموسم.",
+        "prompt": "اختر موسمًا لعرض أعداد التسجيل.",
+        "manageSeasons": "إدارة المواسم"
+      }
+    }
   }
 }

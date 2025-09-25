@@ -112,5 +112,169 @@
     "4": "木曜",
     "5": "金曜",
     "6": "土曜"
+  },
+  "admin": {
+    "title": "管理ポータル",
+    "description": "シーズン・講座・クラス・レポートを管理します。",
+    "links": {
+      "overview": "概要",
+      "seasons": "シーズン",
+      "courses": "講座",
+      "sections": "クラス",
+      "reports": "レポート"
+    },
+    "overview": {
+      "seasons": "申込期間と開講期間を設定します。",
+      "courses": "レベルや形式ごとの講座を登録します。",
+      "sections": "講師と開催スケジュールを設定します。",
+      "reports": "講座ごとの申込状況を確認します。"
+    },
+    "actions": {
+      "view": "表示",
+      "manage": "操作",
+      "edit": "編集",
+      "new": "新規",
+      "create": "作成",
+      "save": "保存",
+      "saving": "保存中…",
+      "publish": "公開",
+      "publishing": "公開中…",
+      "filter": "絞り込み",
+      "exportCsv": "CSV をエクスポート",
+      "createSection": "クラスを作成"
+    },
+    "messages": {
+      "error": "リクエストを完了できませんでした。もう一度お試しください。",
+      "noSeasons": "シーズンが見つかりません。",
+      "noCourses": "講座が見つかりません。"
+    },
+    "pagination": {
+      "summary": "ページ {page} / {pages}"
+    },
+    "seasons": {
+      "title": "シーズン",
+      "description": "各シーズンの申込期間を確認・更新します。",
+      "list": {
+        "code": "コード",
+        "title": "名称",
+        "status": "状態",
+        "enrollment": "申込期間",
+        "dates": "開講期間",
+        "enrollmentWindow": "{start} 〜 {end}",
+        "seasonWindow": "{start} 〜 {end}"
+      },
+      "status": {
+        "draft": "下書き",
+        "enrolling": "受付中",
+        "running": "開講中",
+        "completed": "終了",
+        "archived": "アーカイブ"
+      },
+      "fields": {
+        "code": "シーズンコード",
+        "title": "名称",
+        "enrollmentOpen": "申込開始日",
+        "enrollmentClose": "申込終了日",
+        "startDate": "開講日",
+        "endDate": "終了日",
+        "status": "状態"
+      },
+      "new": {
+        "title": "シーズンを作成",
+        "description": "新しいシーズンの申込期間と開講期間を設定します。"
+      },
+      "edit": {
+        "title": "シーズン {code} を編集",
+        "description": "スケジュールと申込設定を更新します。"
+      }
+    },
+    "courses": {
+      "title": "講座",
+      "description": "シーズン別の講座を管理します。",
+      "list": {
+        "code": "コード",
+        "title": "名称",
+        "level": "レベル",
+        "season": "シーズン",
+        "price": "価格",
+        "published": "公開状況"
+      },
+      "filter": {
+        "season": "シーズン",
+        "allSeasons": "すべて"
+      },
+      "fields": {
+        "season": "シーズン",
+        "selectSeason": "シーズンを選択",
+        "code": "講座コード",
+        "title": "名称",
+        "level": "レベル",
+        "modality": "開催形式",
+        "capacity": "定員",
+        "priceCents": "価格（セント）",
+        "currency": "通貨",
+        "published": "公開済み"
+      },
+      "new": {
+        "title": "講座を作成",
+        "description": "シーズンに講座を追加します。"
+      },
+      "edit": {
+        "title": "講座 {code} を編集",
+        "description": "詳細・定員・公開状態を更新します。"
+      },
+      "published": {
+        "true": "公開",
+        "false": "下書き"
+      }
+    },
+    "sections": {
+      "new": {
+        "title": "クラスを作成",
+        "description": "講座のクラススケジュールを登録します。"
+      },
+      "fields": {
+        "courseId": "講座 ID",
+        "instructorId": "講師 ID",
+        "weekday": "曜日",
+        "weekdayPlaceholder": "曜日を選択",
+        "startTime": "開始時間",
+        "endTime": "終了時間",
+        "startDate": "開始日",
+        "endDate": "終了日",
+        "meetingLink": "ミーティング URL"
+      },
+      "weekdays": {
+        "0": "日曜",
+        "1": "月曜",
+        "2": "火曜",
+        "3": "水曜",
+        "4": "木曜",
+        "5": "金曜",
+        "6": "土曜"
+      }
+    },
+    "reports": {
+      "enrollment": {
+        "title": "申込レポート",
+        "description": "講座ごとの申込状況を確認します。",
+        "filter": "シーズン",
+        "allSeasons": "シーズンを選択",
+        "columns": {
+          "code": "講座",
+          "title": "名称",
+          "capacity": "定員",
+          "active": "有効",
+          "pending": "保留",
+          "waitlisted": "待機",
+          "completed": "完了",
+          "cancelled": "キャンセル",
+          "seatsLeft": "残席"
+        },
+        "empty": "このシーズンの申込データはありません。",
+        "prompt": "シーズンを選択すると申込数が表示されます。",
+        "manageSeasons": "シーズンを管理"
+      }
+    }
   }
 }
