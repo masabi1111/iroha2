@@ -1,6 +1,7 @@
 name: Build Flutter (mobile)
 on:
-  push: { branches: [main, staging] }
+  push:
+    branches: [ main, staging ]
   workflow_dispatch:
 jobs:
   build-android:
@@ -11,7 +12,21 @@ jobs:
         with: { channel: 'stable' }
       - run: flutter pub get
         working-directory: mobile
-      - run: flutter build apk --release --dart-define=API_BASE_URL=${{ secrets.MOBILE_API_BASE_URL }} --dart-define=RETURN_URL=iroha://payment/return
+      - name: Build (staging → dev flavor)
+        if: github.ref == 'refs/heads/staging'
+        run: |
+          flutter build apk --flavor dev \
+            --dart-define=API_BASE_URL=${{ secrets.MOBILE_API_BASE_URL_STAGE }} \
+            --dart-define=RETURN_URL=iroha://payment/return
+        working-directory: mobile
+      - name: Build (main → prod flavor)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          flutter build apk --flavor prod \
+            --dart-define=API_BASE_URL=${{ secrets.MOBILE_API_BASE_URL_PROD }} \
+            --dart-define=RETURN_URL=iroha://payment/return
         working-directory: mobile
       - uses: actions/upload-artifact@v4
-        with: { name: iroha-apk, path: mobile/build/app/outputs/flutter-apk/*.apk }
+        with:
+          name: iroha-apk-${{ github.ref_name }}-${{ github.sha }}
+          path: mobile/build/app/outputs/flutter-apk/*.apk

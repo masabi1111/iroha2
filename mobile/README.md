@@ -26,3 +26,37 @@ The files above are ignored by git; do not commit them to the repository.
 4. Foreground messages display a local notification. Background messages are
    handled by the background message handler defined in
    `lib/core/notifications/notifications.dart`.
+
+## Flavors and environment configuration
+
+The Android app defines three flavors: `dev`, `stage`, and `prod`. The
+`google-services` Gradle plugin automatically picks the correct Firebase
+configuration for the selected flavor. Provide files with the following names
+before building if you need per-flavor Firebase projects:
+
+- `mobile/android/app/google-services.json` (prod)
+- `mobile/android/app/google-services.dev.json`
+- `mobile/android/app/google-services.stage.json`
+
+Copy the appropriate file to `mobile/android/app/google-services.json` before
+building if you keep separate Firebase projects per environment.
+
+### Running with API base URLs
+
+Provide the API base URL for each environment via `--dart-define` when running
+or building the Flutter app:
+
+- **DEV**
+  ```sh
+  flutter run --flavor dev   --dart-define=API_BASE_URL=${API_BASE_URL_DEV}   --dart-define=RETURN_URL=iroha://payment/return
+  ```
+- **STAGE**
+  ```sh
+  flutter run --flavor stage --dart-define=API_BASE_URL=${API_BASE_URL_STAGE} --dart-define=RETURN_URL=iroha://payment/return
+  ```
+- **PROD**
+  ```sh
+  flutter run --flavor prod  --dart-define=API_BASE_URL=${API_BASE_URL_PROD}  --dart-define=RETURN_URL=iroha://payment/return
+  ```
+
+Replace the environment variables with the appropriate values for your setup.
