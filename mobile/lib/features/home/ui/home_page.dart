@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../auth/logic/auth_notifier.dart';
+import '../../../l10n/app_localizations.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -49,6 +50,13 @@ class HomePage extends ConsumerWidget {
                       }
                     },
                     child: Text(isAuthenticated ? 'Dashboard' : 'Login'),
+                  ),
+                  const SizedBox(height: 12),
+                  OutlinedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/seasons');
+                    },
+                    child: Text(context.l10n.viewSeasons),
                   ),
                 ],
               ),
