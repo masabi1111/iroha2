@@ -1,21 +1,28 @@
 # Backend
 
-## Database Connection (Remote MySQL)
+## Database Environments
 
-1. In the hosting panel, add the server/client IP to the Remote MySQL allowlist.
-2. Create a local `.env` (do **NOT** commit):
-   ```env
-   DATABASE_URL="mysql://u331221487_mmasabi:Musabi%400594332524@srv1725.hstgr.io:3306/u331221487_irohaDB?sslaccept=accept"
-   ```
-3. Run:
+### Local Development
+
+1. Copy `.env.example` to `.env.development.local` and replace the placeholders with your real credentials. Make sure the password in `DATABASE_URL` is URL-encoded.
+2. Install dependencies and prepare the database:
    ```bash
    npm i
    npm run db:generate
-   npm run db:migrate   # first time (or use db:deploy on production)
-   npm run db:seed
+   npm run db:migrate:dev
+   npm run db:seed:dev
    ```
 
-**Notes**
+### Staging
 
-- If SSL errors occur, keep `?sslaccept=accept` (switch to strict later).
-- On shared hosts that block shadow DB, set `SHADOW_DATABASE_URL` or run `db:deploy` using generated migrations.
+- For local staging tests, create `.env.staging.local` and set `DATABASE_URL` (and optional `SHADOW_DATABASE_URL`).
+- In CI/CD, inject the `STAGE_DATABASE_URL` GitHub Secret so workflows can run `prisma migrate deploy` without committing credentials.
+
+### Production (GitHub Deployments)
+
+- In the GitHub repository settings, add a `PROD_DATABASE_URL` secret. The GitHub Actions workflow will run `prisma migrate deploy` using this value whenever migrations change on the `main` branch.
+
+### Additional Notes
+
+- Always URL-encode special characters in passwords (for example, replace `@` with `%40`).
+- Shared hosts that require a dedicated shadow database can use the optional `SHADOW_DATABASE_URL` variable, following the pattern in `.env.example`.
