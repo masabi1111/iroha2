@@ -8,9 +8,11 @@ import 'features/auth/ui/login_page.dart';
 import 'features/home/ui/home_page.dart';
 import 'features/home/ui/dashboard_page.dart';
 import 'features/catalog/ui/course_detail_page.dart';
-import 'features/catalog/ui/enroll_placeholder_page.dart';
+import 'features/enroll/ui/enroll_page.dart';
 import 'features/catalog/ui/season_detail_page.dart';
 import 'features/catalog/ui/seasons_page.dart';
+import 'features/payments/ui/checkout_page.dart';
+import 'features/payments/ui/payment_return_page.dart';
 import 'l10n/app_localizations.dart';
 
 class IrohaApp extends ConsumerWidget {
@@ -60,10 +62,23 @@ class IrohaApp extends ConsumerWidget {
             settings: settings,
           );
         }
+        if (uri.scheme == 'iroha' && uri.host == 'payment' && uri.path == '/return') {
+          return MaterialPageRoute<void>(
+            builder: (_) => PaymentReturnPage(uri: uri),
+            settings: settings,
+          );
+        }
         if (uri.pathSegments.length == 2 && uri.pathSegments.first == 'enroll') {
           final courseId = uri.pathSegments[1];
           return MaterialPageRoute<void>(
-            builder: (_) => EnrollPlaceholderPage(courseId: courseId),
+            builder: (_) => EnrollPage(courseId: courseId),
+            settings: settings,
+          );
+        }
+        if (uri.pathSegments.length == 2 && uri.pathSegments.first == 'checkout') {
+          final enrollmentId = uri.pathSegments[1];
+          return MaterialPageRoute<void>(
+            builder: (_) => CheckoutPage(enrollmentId: enrollmentId),
             settings: settings,
           );
         }
