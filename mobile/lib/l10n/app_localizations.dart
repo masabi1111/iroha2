@@ -35,6 +35,21 @@ class AppLocalizations {
       'seatsLeft': '{count} seats left',
       'sectionFallbackTitle': 'Section {id}',
       'enrollmentPlaceholder': 'Enrollment flow for {courseId} coming soon.',
+      'selectSection': 'Select a section',
+      'enrollmentWaitlistedMessage':
+          'You have been placed on the waitlist. We will notify you if a seat becomes available.',
+      'enrollmentSectionRequired': 'Please select a section to continue.',
+      'enrollmentSuccessMessage': 'You are enrolled! Check your dashboard for updates.',
+      'checkoutTitle': 'Checkout',
+      'paymentRedirecting': 'We are redirecting you to the secure checkout.',
+      'openCheckout': 'Open checkout',
+      'paymentMissingCheckoutUrl': 'No payment is required for this enrollment.',
+      'paymentLaunchFailed': 'Unable to open the checkout. Please try again.',
+      'paymentReturnTitle': 'Payment verification',
+      'paymentReturnVerifying': 'Verifying your payment…',
+      'goToDashboard': 'Go to dashboard',
+      'paymentReturnEnrollment': 'Enrollment #{id}',
+      'paymentStatusLabel': 'Status',
     },
     'ar': {
       'browse': 'تصفح',
@@ -55,6 +70,20 @@ class AppLocalizations {
       'seatsLeft': 'المقاعد المتبقية: {count}',
       'sectionFallbackTitle': 'المجموعة {id}',
       'enrollmentPlaceholder': 'عملية التسجيل للدورة {courseId} قيد الإعداد.',
+      'selectSection': 'اختر مجموعة',
+      'enrollmentWaitlistedMessage': 'تمت إضافتك إلى قائمة الانتظار. سنخطرك إذا توفر مقعد.',
+      'enrollmentSectionRequired': 'يرجى اختيار مجموعة للمتابعة.',
+      'enrollmentSuccessMessage': 'تم تسجيلك! راجع لوحة التحكم للتحديثات.',
+      'checkoutTitle': 'الدفع',
+      'paymentRedirecting': 'جارٍ تحويلك إلى بوابة الدفع الآمنة.',
+      'openCheckout': 'فتح صفحة الدفع',
+      'paymentMissingCheckoutUrl': 'لا توجد حاجة للدفع لهذا التسجيل.',
+      'paymentLaunchFailed': 'تعذّر فتح صفحة الدفع. يرجى المحاولة مرة أخرى.',
+      'paymentReturnTitle': 'التحقق من الدفع',
+      'paymentReturnVerifying': 'جاري التحقق من عملية الدفع…',
+      'goToDashboard': 'الانتقال إلى لوحة التحكم',
+      'paymentReturnEnrollment': 'التسجيل رقم {id}',
+      'paymentStatusLabel': 'الحالة',
     },
     'ja': {
       'browse': '閲覧',
@@ -75,6 +104,20 @@ class AppLocalizations {
       'seatsLeft': '残り{count}席',
       'sectionFallbackTitle': 'クラス{id}',
       'enrollmentPlaceholder': '{courseId} の申込フローは準備中です。',
+      'selectSection': 'クラスを選択してください',
+      'enrollmentWaitlistedMessage': '満席のためウェイトリストに追加されました。空席が出たらお知らせします。',
+      'enrollmentSectionRequired': '続行するにはクラスを選択してください。',
+      'enrollmentSuccessMessage': '申込が完了しました。ダッシュボードを確認してください。',
+      'checkoutTitle': 'チェックアウト',
+      'paymentRedirecting': '決済ページへリダイレクトしています。',
+      'openCheckout': '決済ページを開く',
+      'paymentMissingCheckoutUrl': 'この申込では支払いは不要です。',
+      'paymentLaunchFailed': '決済ページを開けませんでした。もう一度お試しください。',
+      'paymentReturnTitle': '決済の確認',
+      'paymentReturnVerifying': '決済を確認しています…',
+      'goToDashboard': 'ダッシュボードへ',
+      'paymentReturnEnrollment': '申込番号 {id}',
+      'paymentStatusLabel': 'ステータス',
     },
   };
 
@@ -111,6 +154,21 @@ class AppLocalizations {
   String sectionFallbackTitle(String id) => _format('sectionFallbackTitle', {'id': id});
   String enrollmentPlaceholder(String courseId) =>
       _format('enrollmentPlaceholder', {'courseId': courseId});
+  String get selectSection => _translate('selectSection');
+  String get enrollmentWaitlistedMessage => _translate('enrollmentWaitlistedMessage');
+  String get enrollmentSectionRequired => _translate('enrollmentSectionRequired');
+  String get enrollmentSuccessMessage => _translate('enrollmentSuccessMessage');
+  String get checkoutTitle => _translate('checkoutTitle');
+  String get paymentRedirecting => _translate('paymentRedirecting');
+  String get openCheckout => _translate('openCheckout');
+  String get paymentMissingCheckoutUrl => _translate('paymentMissingCheckoutUrl');
+  String get paymentLaunchFailed => _translate('paymentLaunchFailed');
+  String get paymentReturnTitle => _translate('paymentReturnTitle');
+  String get paymentReturnVerifying => _translate('paymentReturnVerifying');
+  String get goToDashboard => _translate('goToDashboard');
+  String paymentReturnEnrollment(String id) =>
+      _format('paymentReturnEnrollment', {'id': id});
+  String get paymentStatusLabel => _translate('paymentStatusLabel');
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
