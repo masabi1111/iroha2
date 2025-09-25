@@ -9,3 +9,236 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+enum SeasonStatus {
+  scheduled
+  enrolling
+  running
+  complete
+  archived
+}
+
+enum CourseLevel {
+  A0
+  A1
+  A2
+  B1
+  B2
+}
+
+enum CourseModality {
+  live
+  recorded
+  hybrid
+}
+
+enum EnrollmentStatus {
+  pending
+  active
+  waitlisted
+  cancelled
+  completed
+}
+
+enum PaymentStatus {
+  initiated
+  paid
+  failed
+  refunded
+}
+
+model users {
+  id            BigInt         @id @default(autoincrement())
+  email         String         @unique @db.VarChar(255)
+  phone         String?        @db.VarChar(30)
+  password_hash String?        @db.VarChar(255)
+  first_name    String?        @db.VarChar(100)
+  last_name     String?        @db.VarChar(100)
+  locale        String         @default("ar") @db.VarChar(10)
+  timezone      String         @default("Asia/Riyadh") @db.VarChar(50)
+  created_at    DateTime       @default(now())
+
+  user_roles   user_roles[]
+  sections     sections[]      @relation("SectionInstructor")
+  enrollments  enrollments[]
+  quiz_attempts quiz_attempts[]
+  attendance   attendance[]
+}
+
+model roles {
+  id   Int     @id @db.TinyInt
+  name String  @unique @db.VarChar(50)
+
+  user_roles user_roles[]
+}
+
+model user_roles {
+  user_id BigInt
+  role_id Int     @db.TinyInt
+
+  user users @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  role roles @relation(fields: [role_id], references: [id], onDelete: Cascade)
+
+  @@id([user_id, role_id])
+}
+
+model seasons {
+  id               BigInt        @id @default(autoincrement())
+  code             String        @unique @db.VarChar(20)
+  title            String        @db.VarChar(100)
+  start_date       DateTime      @db.Date
+  end_date         DateTime      @db.Date
+  enrollment_open  DateTime
+  enrollment_close DateTime
+  status           SeasonStatus
+
+  courses courses[]
+}
+
+model courses {
+  id           BigInt          @id @default(autoincrement())
+  season_id    BigInt
+  code         String          @db.VarChar(50)
+  title        String          @db.VarChar(200)
+  level        CourseLevel
+  description  String?         @db.Text
+  modality     CourseModality  @default(hybrid)
+  language     String          @default("ja") @db.VarChar(10)
+  capacity     Int             @default(25)
+  price_cents  Int
+  currency     String          @default("SAR") @db.Char(3)
+  published    Boolean         @default(false)
+
+  season      seasons         @relation(fields: [season_id], references: [id], onDelete: Cascade)
+  sections    sections[]
+  lessons     lessons[]
+  enrollments enrollments[]
+  quizzes     quizzes[]
+
+  @@index([season_id])
+}
+
+model sections {
+  id             BigInt    @id @default(autoincrement())
+  course_id      BigInt
+  instructor_id  BigInt
+  title          String?   @db.VarChar(100)
+  meeting_link   String?   @db.VarChar(500)
+  weekday        Int       @db.TinyInt
+  start_time     DateTime  @db.Time
+  end_time       DateTime  @db.Time
+  start_date     DateTime  @db.Date
+  end_date       DateTime  @db.Date
+
+  course     courses   @relation(fields: [course_id], references: [id], onDelete: Cascade)
+  instructor users     @relation("SectionInstructor", fields: [instructor_id], references: [id])
+  lessons    lessons[]
+  enrollments enrollments[]
+  attendance attendance[]
+
+  @@index([course_id])
+  @@index([instructor_id])
+}
+
+model lessons {
+  id            BigInt    @id @default(autoincrement())
+  course_id     BigInt
+  section_id    BigInt?
+  week_no       Int?
+  title         String    @db.VarChar(200)
+  video_url     String?   @db.VarChar(500)
+  materials_json Json?
+  release_at    DateTime?
+
+  course   courses  @relation(fields: [course_id], references: [id], onDelete: Cascade)
+  section  sections? @relation(fields: [section_id], references: [id])
+}
+
+model enrollments {
+  id          BigInt           @id @default(autoincrement())
+  user_id     BigInt
+  course_id   BigInt
+  section_id  BigInt?
+  status      EnrollmentStatus
+  enrolled_at DateTime         @default(now())
+
+  user       users      @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  course     courses    @relation(fields: [course_id], references: [id], onDelete: Cascade)
+  section    sections?  @relation(fields: [section_id], references: [id])
+  payments   payments[]
+  certificate certificates?
+
+  @@unique([user_id, course_id])
+  @@index([course_id])
+  @@index([section_id])
+}
+
+model payments {
+  id            BigInt        @id @default(autoincrement())
+  enrollment_id BigInt
+  provider      String        @db.VarChar(50)
+  provider_ref  String        @db.VarChar(100)
+  amount_cents  Int
+  currency      String        @default("SAR") @db.Char(3)
+  status        PaymentStatus
+  created_at    DateTime      @default(now())
+
+  enrollment enrollments @relation(fields: [enrollment_id], references: [id], onDelete: Cascade)
+
+  @@index([enrollment_id])
+}
+
+model quizzes {
+  id             BigInt     @id @default(autoincrement())
+  course_id      BigInt
+  title          String     @db.VarChar(200)
+  total_points   Int
+  config_json    Json?
+  available_from DateTime?
+  due_at         DateTime?
+
+  course       courses       @relation(fields: [course_id], references: [id], onDelete: Cascade)
+  quiz_attempts quiz_attempts[]
+
+  @@index([course_id])
+}
+
+model quiz_attempts {
+  id           BigInt    @id @default(autoincrement())
+  quiz_id      BigInt
+  user_id      BigInt
+  score        Int?
+  submitted_at DateTime?
+  answers_json Json?
+
+  quiz quizzes @relation(fields: [quiz_id], references: [id], onDelete: Cascade)
+  user users   @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([quiz_id])
+  @@index([user_id])
+}
+
+model attendance {
+  id           BigInt    @id @default(autoincrement())
+  section_id   BigInt
+  user_id      BigInt
+  meeting_date DateTime  @db.Date
+  present      Boolean
+  note         String?   @db.VarChar(255)
+
+  section sections @relation(fields: [section_id], references: [id], onDelete: Cascade)
+  user    users    @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@unique([section_id, user_id, meeting_date])
+  @@index([user_id])
+}
+
+model certificates {
+  id            BigInt       @id @default(autoincrement())
+  enrollment_id BigInt       @unique
+  issued_at     DateTime?
+  pdf_url       String?      @db.VarChar(500)
+  grade         String?      @db.VarChar(10)
+
+  enrollment enrollments @relation(fields: [enrollment_id], references: [id], onDelete: Cascade)
+}
