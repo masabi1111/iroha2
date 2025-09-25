@@ -10,3 +10,7 @@ build/
 # IntelliJ
 .idea/
 *.iml
+
+# Firebase configuration files (do not commit secrets)
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist

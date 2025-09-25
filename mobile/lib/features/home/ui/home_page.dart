@@ -12,11 +12,24 @@ class HomePage extends ConsumerWidget {
     final authState = ref.watch(authNotifierProvider);
     final isLoading = authState is AuthStateAuthenticating;
     final isAuthenticated = authState is AuthStateAuthenticated;
+    var showDebugTools = false;
+    assert(() {
+      showDebugTools = true;
+      return true;
+    }());
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('iroha'),
         actions: [
+          if (showDebugTools)
+            IconButton(
+              tooltip: 'Notifications debug',
+              onPressed: () {
+                Navigator.of(context).pushNamed('/debug/notifications');
+              },
+              icon: const Icon(Icons.notifications_active_outlined),
+            ),
           if (isAuthenticated)
             IconButton(
               tooltip: 'Logout',

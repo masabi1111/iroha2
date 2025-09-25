@@ -6,6 +6,7 @@ import 'core/network/dio_provider.dart';
 import 'features/auth/logic/auth_notifier.dart';
 import 'features/auth/ui/login_page.dart';
 import 'features/home/ui/home_page.dart';
+import 'core/notifications/notifications.dart';
 import 'features/home/ui/dashboard_page.dart';
 import 'features/catalog/ui/course_detail_page.dart';
 import 'features/enroll/ui/enroll_page.dart';
@@ -13,6 +14,7 @@ import 'features/catalog/ui/season_detail_page.dart';
 import 'features/catalog/ui/seasons_page.dart';
 import 'features/payments/ui/checkout_page.dart';
 import 'features/payments/ui/payment_return_page.dart';
+import 'features/debug/notifications_debug_page.dart';
 import 'l10n/app_localizations.dart';
 
 class IrohaApp extends ConsumerWidget {
@@ -24,6 +26,7 @@ class IrohaApp extends ConsumerWidget {
 
     return MaterialApp(
       title: 'iroha',
+      navigatorKey: navigatorKey,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
         useMaterial3: true,
@@ -41,6 +44,7 @@ class IrohaApp extends ConsumerWidget {
         '/login': (_) => const LoginPage(),
         '/dashboard': (_) => const DashboardPage(),
         '/seasons': (_) => const SeasonsPage(),
+        '/debug/notifications': (_) => const NotificationsDebugPage(),
       },
       onGenerateRoute: (settings) {
         final name = settings.name;
