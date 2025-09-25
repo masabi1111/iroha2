@@ -26,3 +26,17 @@
 
 - Always URL-encode special characters in passwords (for example, replace `@` with `%40`).
 - Shared hosts that require a dedicated shadow database can use the optional `SHADOW_DATABASE_URL` variable, following the pattern in `.env.example`.
+
+## Production DB via GitHub Secrets
+
+### Adding the production secret
+
+1. In GitHub → Settings → Secrets → Actions → **New repository secret**:
+   - **Name**: `PROD_DATABASE_URL`
+   - **Value example**: `mysql://u331221487_mmasabi:Musabi%400594332524@srv1725.hstgr.io:3306/u331221487_irohaDB?sslaccept=accept`
+2. Passwords must be URL-encoded (for example, `@` becomes `%40`).
+3. Allowlist the GitHub runner IP in your Hostinger **Remote MySQL** settings if required.
+
+### Deploying production migrations
+
+- Push a commit to `main` that modifies `backend/prisma/migrations/**` or trigger the "Deploy Prisma Migrations" workflow manually.

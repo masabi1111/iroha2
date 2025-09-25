@@ -11,6 +11,7 @@
     "db:deploy:prod": "prisma migrate deploy",
     "db:seed": "npm run db:seed:dev",
     "db:seed:dev": "dotenv -e .env.development.local -- ts-node prisma/seed.ts",
+    "db:health": "ts-node scripts/db-test.ts",
     "db:studio": "dotenv -e .env.development.local -- prisma studio"
   },
   "prisma": {
