@@ -1,7 +1,14 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'com.google.gms.google-services'
+}
+
+def hasGoogleServices = file("google-services.json").exists()
+
+if (hasGoogleServices) {
+    apply plugin: 'com.google.gms.google-services'
+} else {
+    println("⚠️  google-services.json not found; skipping Google Services plugin for CI/local without Firebase.")
 }
 
 android {
